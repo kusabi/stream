@@ -51,6 +51,16 @@ class Stream implements StreamInterface
     }
 
     /**
+     * Is the url of the stream a local one or not?
+     *
+     * @return bool
+     */
+    public function isLocal() : bool
+    {
+        return stream_is_local($this->resource);
+    }
+
+    /**
      * {@inheritDoc}
      *
      * @see StreamInterface::close()
