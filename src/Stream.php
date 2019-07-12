@@ -233,6 +233,56 @@ class Stream implements StreamInterface
     }
 
     /**
+     * Get the wrapper type from the metadata
+     *
+     * @return string
+     */
+    public function getWrapperType() : string
+    {
+        return $this->getMetadata('wrapper_type');
+    }
+
+    /**
+     * Get the stream type from the metadata
+     *
+     * @return string
+     */
+    public function getStreamType() : string
+    {
+        return $this->getMetadata('stream_type');
+    }
+
+    /**
+     * Get the mode from the metadata
+     *
+     * @return string
+     */
+    public function getMode() : string
+    {
+        return $this->getMetadata('mode');
+    }
+
+    /**
+     * Get the unread bytes from the metadata
+     *
+     * @return int
+     */
+    public function getUnreadBytes() : int
+    {
+        return $this->getMetadata('unread_bytes');
+    }
+
+    /**
+     * Get the uri from the metadata
+     *
+     * @return string
+     */
+    public function getUri() : string
+    {
+        return $this->getMetadata('uri');
+    }
+
+    /**
      * Get stream stats as an associative array or retrieve a specific key.
      *
      * The keys returned are identical to the keys returned from PHPs fstat() function.

@@ -258,6 +258,36 @@ class StreamTest extends TestCase
         $this->assertNull($stream->getMetadata('not-real'));
     }
 
+    public function testGetWrapperType()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $this->assertSame('PHP', $stream->getWrapperType());
+    }
+
+    public function testGetStreamType()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $this->assertSame('TEMP', $stream->getStreamType());
+    }
+
+    public function testGetMode()
+    {
+        $stream = new Stream(fopen('php://stdin', 'r+'));
+        $this->assertSame('r+', $stream->getMode());
+    }
+
+    public function testGetUnreadBytes()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $this->assertSame(0, $stream->getUnreadBytes());
+    }
+
+    public function testGetUri()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $this->assertSame('php://temp', $stream->getUri());
+    }
+
     public function testGetStatsWithoutKeyReturnsAll()
     {
         $resource = fopen('php://temp', 'r+');
