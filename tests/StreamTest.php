@@ -231,6 +231,30 @@ class StreamTest extends TestCase
         $stream->getContents();
     }
 
+    public function testGetLine()
+    {
+        $resource = fopen('php://temp', 'r+');
+        fwrite($resource, 'hello;how;are;you');
+        rewind($resource);
+        $stream = new Stream($resource);
+        $this->assertSame('hello', $stream->getLine(null, ';'));
+        $this->assertSame('how', $stream->getLine(90, ';'));
+        $this->assertSame('are', $stream->getLine(90, ';'));
+        $this->assertSame('you', $stream->getLine(90, ';'));
+
+        $stream->rewind();
+        $this->assertSame('hello;how;are;you', $stream->getLine());
+    }
+
+    public function testGetLineThrowsExceptionWhenNotReadable()
+    {
+        $this->expectException(RuntimeException::class);
+        $this->expectExceptionMessage('Resource is not readable');
+        $resource = fopen('php://stdout', 'w');
+        $stream = new Stream($resource);
+        $stream->getLine();
+    }
+
     public function testGetMetaDataWithoutKeyReturnsAll()
     {
         $resource = fopen('php://temp', 'r+');
