@@ -1,6 +1,6 @@
 {
     "name": "kusabi/stream",
-    "description": "A stream wrapper for PHP",
+    "description": "A PSR-7 and PSR-17 conforming stream wrapper library for PHP",
     "type": "library",
     "license": "MIT",
     "authors": [
