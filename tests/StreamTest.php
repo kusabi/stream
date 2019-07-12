@@ -288,6 +288,15 @@ class StreamTest extends TestCase
         $this->assertSame('php://temp', $stream->getUri());
     }
 
+    public function testIsLocal()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $this->assertTrue($stream->isLocal());
+
+        $stream = new Stream(fopen('http://www.google.com', 'r'));
+        $this->assertFalse($stream->isLocal());
+    }
+
     public function testGetStatsWithoutKeyReturnsAll()
     {
         $resource = fopen('php://temp', 'r+');
