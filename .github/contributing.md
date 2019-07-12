@@ -9,4 +9,5 @@ Do not let the code coverage drop.
 ```bash
 vendor/bin/php-cs-fixer fix
 vendor/bin/phpunit
+vendor/bin/phan
 ```
