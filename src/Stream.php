@@ -229,6 +229,30 @@ class Stream implements StreamInterface
     }
 
     /**
+     * Read a line from stream resource up to a given delimiter.
+     *
+     * @param int $length
+     * @param string $ending
+     *
+     * @return string
+     *
+     * @see stream_get_line()
+     */
+    public function getLine($length = null, $ending = "\n")
+    {
+        if (!$this->isReadable()) {
+            throw new RuntimeException('Resource is not readable');
+        }
+        $result = stream_get_line($this->resource, $length ?: $this->getSize(), $ending);
+        if ($result === false) {
+            // @codeCoverageIgnoreStart
+            throw new RuntimeException('An unknown error occurred while trying to read the resource');
+            // @codeCoverageIgnoreEnd
+        }
+        return $result;
+    }
+
+    /**
      * {@inheritDoc}
      *
      * @see StreamInterface::getMetadata()
