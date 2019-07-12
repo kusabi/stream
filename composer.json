@@ -18,7 +18,8 @@
         "symfony/var-dumper": "^4.3",
         "phan/phan": "^1.2",
         "phpunit/phpunit": "^8.2",
-        "friendsofphp/php-cs-fixer": "^2.15"
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "codacy/coverage": "^1.4"
     },
     "autoload": {
         "psr-4": {

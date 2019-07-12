@@ -1,10 +1,10 @@
-[![Release Badge](https://img.shields.io/github/release/kusabi-psr/uri.svg)](https://img.shields.io/github/release/kusabi-psr/uri.svg)
-[![Tag Badge](https://img.shields.io/github/tag/kusabi-psr/uri.svg)](https://img.shields.io/github/tag/kusabi-psr/uri.svg)
-[![Coverage Badge](https://img.shields.io/codacy/coverage/a2236972c0084da8a41a880cb7e017b8.svg)](https://img.shields.io/codacy/grade/bec9194f88a843fd9abd4edef6102f9b.svg)
-[![Grade Badge](https://img.shields.io/codacy/grade/a2236972c0084da8a41a880cb7e017b8.svg)](https://img.shields.io/codacy/grade/bec9194f88a843fd9abd4edef6102f9b.svg)
-[![Issues Badge](https://img.shields.io/github/issues/kusabi-psr/uri.svg)](https://img.shields.io/github/issues/kusabi-psr/uri.svg)
-[![Licence Badge](https://img.shields.io/github/license/kusabi-psr/uri.svg)](https://img.shields.io/github/license/kusabi-psr/uri.svg)
-[![Code Size](https://img.shields.io/github/languages/code-size/kusabi-psr/uri.svg)](https://img.shields.io/github/languages/code-size/kusabi-psr/uri.svg)
+[![Release Badge](https://img.shields.io/github/release/kusabi/stream.svg)](https://img.shields.io/github/release/kusabi/uri.svg)
+[![Tag Badge](https://img.shields.io/github/tag/kusabi/stream.svg)](https://img.shields.io/github/tag/kusabi/uri.svg)
+[![Coverage Badge](https://img.shields.io/codacy/coverage/b0465ef64f3643a8a8cdb5453eea9274.svg)](https://img.shields.io/codacy/grade/b0465ef64f3643a8a8cdb5453eea9274.svg)
+[![Grade Badge](https://img.shields.io/codacy/grade/b0465ef64f3643a8a8cdb5453eea9274.svg)](https://img.shields.io/codacy/grade/b0465ef64f3643a8a8cdb5453eea9274.svg)
+[![Issues Badge](https://img.shields.io/github/issues/kusabi/stream.svg)](https://img.shields.io/github/issues/kusabi/uri.svg)
+[![Licence Badge](https://img.shields.io/github/license/kusabi/stream.svg)](https://img.shields.io/github/license/kusabi/uri.svg)
+[![Code Size](https://img.shields.io/github/languages/code-size/kusabi/stream.svg)](https://img.shields.io/github/languages/code-size/kusabi/uri.svg)
 
 An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Uri library
 
