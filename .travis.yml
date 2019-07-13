@@ -36,18 +36,18 @@ matrix:
         - CODE_COVERAGE=false
         - CODE_SNIFFER=true
         - STATIC_ANALYSER=true
-    - name: 'Test PHP 7.4'
-      php: '7.4snapshot'
-      env:
-        - CODE_COVERAGE=false
-        - CODE_SNIFFER=false
-        - STATIC_ANALYSER=false
-    - name: 'Test PHP nightly release'
-      php: 'nightly'
-      env:
-        - CODE_COVERAGE=false
-        - CODE_SNIFFER=false
-        - STATIC_ANALYSER=false
+#    - name: 'Test PHP 7.4'
+#      php: '7.4snapshot'
+#      env:
+#        - CODE_COVERAGE=false
+#        - CODE_SNIFFER=false
+#        - STATIC_ANALYSER=false
+#    - name: 'Test PHP nightly release'
+#      php: 'nightly'
+#      env:
+#        - CODE_COVERAGE=false
+#        - CODE_SNIFFER=false
+#        - STATIC_ANALYSER=false
     - name: 'Publish the code coverage'
       php: '7.3'
       if: (NOT type IN (pull_request)) AND (branch = master)
