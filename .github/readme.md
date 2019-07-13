@@ -1,4 +1,4 @@
-[![Build Badge](https://img.shields.io/travis/kusabi/stream.svg)](https://img.shields.io/github/languages/code-size/kusabi/uri.svg)
+[![Build Badge](https://img.shields.io/circleci/build/gh/kusabi/stream/master.svg)](https://img.shields.io/circleci/build/gh/kusabi/stream/master.svg)
 [![Release Badge](https://img.shields.io/github/release/kusabi/stream.svg)](https://img.shields.io/github/release/kusabi/uri.svg)
 [![Tag Badge](https://img.shields.io/github/tag/kusabi/stream.svg)](https://img.shields.io/github/tag/kusabi/uri.svg)
 [![Coverage Badge](https://img.shields.io/codacy/coverage/b0465ef64f3643a8a8cdb5453eea9274.svg)](https://img.shields.io/codacy/grade/b0465ef64f3643a8a8cdb5453eea9274.svg)
