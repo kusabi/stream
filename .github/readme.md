@@ -6,7 +6,7 @@
 [![Licence Badge](https://img.shields.io/github/license/kusabi/stream.svg)](https://img.shields.io/github/license/kusabi/uri.svg)
 [![Code Size](https://img.shields.io/github/languages/code-size/kusabi/stream.svg)](https://img.shields.io/github/languages/code-size/kusabi/uri.svg)
 
-An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Uri library
+An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Stream library
 
 # Using the Stream class
 
@@ -29,8 +29,12 @@ $stream->seek($offset, $whence = SEEK_SET); // Move the pointer around in the st
 $stream->tell(); // Where is the pointer in the stream
 $stream->rewind(); // Set the pointer to the beginning of the stream
 $stream->read($length); // Read the next $length character from the stream
+$stream->write($string); // Write data into the stream. Returns the number of bytes written
 $stream->getMetadata($key = null); // Get all the metadata, or a particular key
 $stream->getStat($key = null); // Get all the fstat entries, or a particular key
+$stream->isLocal(); // Determine if the stream url is local using `stream_is_local()`
+$stream->getLine($length = null, $ending = "\n"); // Fetch a line up to a length or delimiter (which ever comes first)
+$stream->pipe(Stream $stream); // Copy the contents of one stream into another
 (string) $stream; // Rewind and get all the contents from the stream
 
 ```
