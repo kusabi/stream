@@ -51,6 +51,18 @@ class Stream implements StreamInterface
     }
 
     /**
+     * Pipe the data of this stream into another stream
+     *
+     * @param Stream $stream
+     *
+     * @return int Number of bytes piped
+     */
+    public function pipe(Stream $stream)
+    {
+        return stream_copy_to_stream($this->getResource(), $stream->getResource());
+    }
+
+    /**
      * Is the url of the stream a local one or not?
      *
      * @return bool

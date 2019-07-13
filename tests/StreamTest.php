@@ -321,6 +321,24 @@ class StreamTest extends TestCase
         $this->assertFalse($stream->isLocal());
     }
 
+    public function testPipeCopiesItsContents()
+    {
+        $resourceA = fopen('php://temp', 'w+');
+        $resourceB = fopen('php://temp', 'w+');
+
+        fwrite($resourceA, 'this is some test data');
+        rewind($resourceA);
+
+        $streamA = new Stream($resourceA);
+        $streamB = new Stream($resourceB);
+
+        $streamA->pipe($streamB);
+        $streamB->rewind();
+
+        $this->assertSame('this is some test data', (string) $streamA);
+        $this->assertSame('this is some test data', (string) $streamB);
+    }
+
     public function testGetStatsWithoutKeyReturnsAll()
     {
         $resource = fopen('php://temp', 'r+');
