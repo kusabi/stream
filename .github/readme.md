@@ -8,6 +8,24 @@
 
 An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Stream library
 
+# Installation
+
+Installation is simple using composer.
+
+```bash
+composer require kusabi/stream
+```
+
+Or simply add it to your `composer.json` file
+
+```json
+{
+    "require": {
+        "kusabi/stream": "^1.0"
+    }
+}
+```
+
 # Using the Stream class
 
 The Stream class is a very basic wrapper around a stream resource.
