@@ -1,0 +1,75 @@
+language: php
+
+sudo: false
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+matrix:
+  include:
+    - name: 'Test PHP 7.0'
+      php: '7.0'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=true
+        - STATIC_ANALYSER=true
+    - name: 'Test PHP 7.1'
+      php: '7.1'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=true
+        - STATIC_ANALYSER=true
+    - name: 'Test PHP 7.2'
+      php: '7.2'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=true
+        - STATIC_ANALYSER=true
+    - name: 'Test PHP 7.3'
+      php: '7.3'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=true
+        - STATIC_ANALYSER=true
+    - name: 'Test PHP 7.4'
+      php: '7.4snapshot'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=false
+        - STATIC_ANALYSER=false
+    - name: 'Test PHP nightly release'
+      php: 'nightly'
+      env:
+        - CODE_COVERAGE=false
+        - CODE_SNIFFER=false
+        - STATIC_ANALYSER=false
+    - name: 'Publish the code coverage'
+      php: '7.3'
+      if: (NOT type IN (pull_request)) AND (branch = master)
+      env:
+        - CODE_COVERAGE=true
+        - CODE_SNIFFER=false
+        - CODE_COVERAGE=false
+  allow_failures:
+    - php: nightly
+  fast_finish: true
+
+before_install:
+  - if [ "${STATIC_ANALYSER}" == "true" ]; then pecl install ast; fi
+  - composer self-update
+
+install:
+  - composer update
+
+script:
+  - if [ "${CODE_SNIFFER}" == "true" ]; then vendor/bin/php-cs-fixer fix --dry-run; fi
+  - if [ "${STATIC_ANALYSER}" == "true" ]; then vendor/bin/phan; fi
+  - vendor/bin/phpunit
+
+after_script:
+  - if [ "${CODE_COVERAGE}" == "true" ]; then vendor/bin/codacycoverage clover build/coverage/clover.xml; fi
