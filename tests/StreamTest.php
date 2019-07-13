@@ -112,6 +112,13 @@ class StreamTest extends TestCase
         $this->assertSame(strlen($text), $stream->tell());
     }
 
+    public function testChainMethods()
+    {
+        $stream = new Stream(fopen('php://temp', 'r+'));
+        $stream->put('test')->rewind()->put('four')->seek(1)->put('ive');
+        $this->assertSame('five', (string) $stream);
+    }
+
     public function testSeekThrowsExceptionIfNotSeekable()
     {
         $this->expectException(RuntimeException::class);

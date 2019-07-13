@@ -30,6 +30,7 @@ $stream->tell(); // Where is the pointer in the stream
 $stream->rewind(); // Set the pointer to the beginning of the stream
 $stream->read($length); // Read the next $length character from the stream
 $stream->write($string); // Write data into the stream. Returns the number of bytes written
+$stream->put($string); // Write data into the stream. Returns self for chaining
 $stream->getMetadata($key = null); // Get all the metadata, or a particular key
 $stream->getStat($key = null); // Get all the fstat entries, or a particular key
 $stream->isLocal(); // Determine if the stream url is local using `stream_is_local()`

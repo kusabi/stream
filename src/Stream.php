@@ -143,9 +143,11 @@ class Stream implements StreamInterface
     /**
      * {@inheritDoc}
      *
+     * @return self
+     *
      * @see StreamInterface::seek()
      */
-    public function seek($offset, $whence = SEEK_SET)
+    public function seek($offset, $whence = SEEK_SET) :self
     {
         if (!$this->isSeekable()) {
             throw new RuntimeException('Resource is not seekable');
@@ -156,17 +158,19 @@ class Stream implements StreamInterface
             throw new RuntimeException('An unknown error occurred while trying to seek the resource');
             // @codeCoverageIgnoreEnd
         }
-        return $result;
+        return $this;
     }
 
     /**
      * {@inheritDoc}
      *
+     * @return self
+     *
      * @see StreamInterface::rewind()
      */
-    public function rewind()
+    public function rewind() : self
     {
-        $this->seek(0);
+        return $this->seek(0);
     }
 
     /**
@@ -196,6 +200,21 @@ class Stream implements StreamInterface
             // @codeCoverageIgnoreEnd
         }
         return $bytes;
+    }
+
+    /**
+     * Write the stream but return the stream instancefor chaining
+     *
+     * @param string $string
+     *
+     * @throws \RuntimeException on failure.
+     *
+     * @return self
+     */
+    public function put(string $string) : self
+    {
+        $this->write($string);
+        return $this;
     }
 
     /**
