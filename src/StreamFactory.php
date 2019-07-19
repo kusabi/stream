@@ -11,6 +11,8 @@ class StreamFactory implements StreamFactoryInterface
     /**
      * {@inheritDoc}
      *
+     * @return Stream
+     *
      * @see StreamFactoryInterface::createStream()
      */
     public function createStream(string $content = ''): StreamInterface
@@ -25,6 +27,8 @@ class StreamFactory implements StreamFactoryInterface
 
     /**
      * {@inheritDoc}
+     *
+     * @return Stream
      *
      * @see StreamFactoryInterface::createStreamFromFile()
      */
@@ -41,6 +45,8 @@ class StreamFactory implements StreamFactoryInterface
 
     /**
      * {@inheritDoc}
+     *
+     * @return Stream
      *
      * @see StreamFactoryInterface::createStreamFromResource()
      */
