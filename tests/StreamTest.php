@@ -26,7 +26,7 @@ class StreamTest extends TestCase
 
     public function testToStringReturnsEmptyStringWhenNotReadable()
     {
-        $resource = fopen('php://stdin', 'w');
+        $resource = fopen('php://stdout', 'w');
         fwrite($resource, '.');
         $stream = new Stream($resource);
         $this->assertSame('', (string) $stream);
