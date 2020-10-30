@@ -8,9 +8,9 @@
 [![Issues Badge](https://img.shields.io/github/issues/kusabi/stream.svg)](https://img.shields.io/github/issues/kusabi/uri.svg)
 [![Code Size](https://img.shields.io/github/languages/code-size/kusabi/stream.svg?label=size)](https://img.shields.io/github/languages/code-size/kusabi/uri.svg)
 
-An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Stream library
+<sup>An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Stream library</sup>
 
-# Installation
+## Installation
 
 Installation is simple using composer.
 
@@ -28,7 +28,7 @@ Or simply add it to your `composer.json` file
 }
 ```
 
-# Using the Stream class
+## Using streams
 
 The Stream class is a very basic wrapper around a stream resource.
 
@@ -60,7 +60,7 @@ $stream->pipe(Stream $stream); // Copy the contents of one stream into another
 ```
 
 
-# Using the Stream Factory
+## Using the stream factory
 
 The Stream factory can be used to create the Stream instance too.
 
