@@ -1,12 +1,12 @@
 # Stream wrapper
 
 ![Tests](https://github.com/kusabi/stream/workflows/tests/badge.svg)
-[![codecov](https://codecov.io/gh/kusabi/stream/branch/master/graph/badge.svg)](https://codecov.io/gh/kusabi/dot)
-[![Licence Badge](https://img.shields.io/github/license/kusabi/stream.svg)](https://img.shields.io/github/license/kusabi/uri.svg)
-[![Release Badge](https://img.shields.io/github/release/kusabi/stream.svg)](https://img.shields.io/github/release/kusabi/uri.svg)
-[![Tag Badge](https://img.shields.io/github/tag/kusabi/stream.svg)](https://img.shields.io/github/tag/kusabi/uri.svg)
-[![Issues Badge](https://img.shields.io/github/issues/kusabi/stream.svg)](https://img.shields.io/github/issues/kusabi/uri.svg)
-[![Code Size](https://img.shields.io/github/languages/code-size/kusabi/stream.svg?label=size)](https://img.shields.io/github/languages/code-size/kusabi/uri.svg)
+[![codecov](https://codecov.io/gh/kusabi/stream/branch/main/graph/badge.svg)](https://codecov.io/gh/kusabi/stream)
+[![Licence Badge](https://img.shields.io/github/license/kusabi/stream.svg)](https://img.shields.io/github/license/kusabi/stream.svg)
+[![Release Badge](https://img.shields.io/github/release/kusabi/stream.svg)](https://img.shields.io/github/release/kusabi/stream.svg)
+[![Tag Badge](https://img.shields.io/github/tag/kusabi/stream.svg)](https://img.shields.io/github/tag/kusabi/stream.svg)
+[![Issues Badge](https://img.shields.io/github/issues/kusabi/stream.svg)](https://img.shields.io/github/issues/kusabi/stream.svg)
+[![Code Size](https://img.shields.io/github/languages/code-size/kusabi/stream.svg?label=size)](https://img.shields.io/github/languages/code-size/kusabi/stream.svg)
 
 <sup>An implementation of a [PSR-7](https://www.php-fig.org/psr/psr-7/) & [PSR-17](https://www.php-fig.org/psr/psr-17/) conforming Stream library</sup>
 
